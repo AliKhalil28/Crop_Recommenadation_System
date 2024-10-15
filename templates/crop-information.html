@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Information - Crop Recommendation System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Banner Section */
+        .crop-banner {
+            position: relative;
+            background-image: url(../static/images/crop-info/crop-info-bg.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 3rem 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .crop-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #085a16;
+            z-index: -1;
+
+        }
+
+
+
+        .crop-banner h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .crop-banner p {
+            font-size: 1.2rem;
+        }
+
+        /* Crop Card Section */
+        .crop-cards {
+            padding: 3rem 0;
+        }
+
+        .crop-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .crop-card:hover {
+            transform: translateY(-10px);
+            background-color: rgb(229, 235, 233);
+
+        }
+
+        .crop-card h5 {
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .crop-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #085a16;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('static', filename='index.html') }}">Crop Recommendation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('crop_information') }}">Crop Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+
+    <!-- Crop Information Banner -->
+    <section class="crop-banner text-center">
+        <div class="container">
+            <h1>Learn About Crops</h1>
+            <p>Discover important details about various crops, including their growth cycle, soil requirements, and
+                common pests and diseases. This information will help you make informed decisions based on the
+                recommendations from our system.</p>
+        </div>
+    </section>
+
+    <!-- Crop Cards Section -->
+    <section class="crop-cards">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Card 1: Wheat -->
+                <div class="col-md-4">
+                    <div class="crop-card p-3 text-center">
+                        <img style="height: 45%; width: 45%;" src="../static/images/crop-info/wheat.jpg"
+                            class="img-fluid" alt="Wheat">
+                        <h5>Wheat</h5>
+                        <p><strong>Growth Cycle:</strong> 100-120 days</p>
+                        <p><strong>Soil Requirements:</strong> Loamy or clayey soil with good drainage</p>
+                        <p><strong>Common Pests/Diseases:</strong> Aphids, Leaf Rust, Wheat Smut</p>
+                    </div>
+                </div>
+                <!-- Card 2: Rice -->
+                <div class="col-md-4">
+                    <div class="crop-card p-3 text-center">
+                        <img style="height: 45%; width: 45%;" src="../static/images/crop-info/crop-info-bg.jpg"
+                            class="img-fluid" alt="Rice">
+                        <h5>Rice</h5>
+                        <p><strong>Growth Cycle:</strong> 120-140 days</p>
+                        <p><strong>Soil Requirements:</strong> Clayey or loamy soil with standing water</p>
+                        <p><strong>Common Pests/Diseases:</strong> Brown Plant Hopper, Rice Blast</p>
+                    </div>
+                </div>
+                <!-- Card 3: Maize -->
+                <div class="col-md-4">
+                    <div class="crop-card p-3 text-center">
+                        <img style="height: 54%; width: 54%;" src="../static/images/crop-info/maize.jpg"
+                            class="img-fluid" alt="Maize">
+                        <h5>Maize</h5>
+                        <p><strong>Growth Cycle:</strong> 90-120 days</p>
+                        <p><strong>Soil Requirements:</strong> Well-drained fertile soil</p>
+                        <p><strong>Common Pests/Diseases:</strong> Corn Earworm, Northern Corn Leaf Blight</p>
+                    </div>
+                </div>
+                <!-- Card 4: Soybean -->
+                <div class="col-md-4">
+                    <div class="crop-card p-3 text-center">
+                        <img style="height: 50%; width: 50%;" src="../static/images/crop-info/soybean.jpg"
+                            class="img-fluid" alt="Soybean">
+                        <h5>Soybean</h5>
+                        <p><strong>Growth Cycle:</strong> 80-100 days</p>
+                        <p><strong>Soil Requirements:</strong> Loamy soil with good organic matter</p>
+                        <p><strong>Common Pests/Diseases:</strong> Soybean Aphids, Soybean Cyst Nematode</p>
+                    </div>
+                </div>
+                <!-- Card 5: Cotton -->
+                <div class="col-md-4">
+                    <div class="crop-card p-3 text-center">
+                        <img style="height: 54%; width: 54%;" src="../static/images/crop-info/cotton.jpg"
+                            class="img-fluid" alt="Cotton">
+                        <h5>Cotton</h5>
+                        <p><strong>Growth Cycle:</strong> 150-180 days</p>
+                        <p><strong>Soil Requirements:</strong> Well-drained loamy or sandy soil</p>
+                        <p><strong>Common Pests/Diseases:</strong> Boll Weevil, Cotton Wilt</p>
+                    </div>
+                </div>
+                <!-- Card 6: Sugarcane -->
+                <div class="col-md-4">
+                    <div class="crop-card p-3 text-center">
+                        <img style="height: 50%; width: 50%;" src="../static/images/crop-info/sugarcane.jpg"
+                            class="img-fluid" alt="Sugarcane">
+                        <h5>Sugarcane</h5>
+                        <p><strong>Growth Cycle:</strong> 10-12 months</p>
+                        <p><strong>Soil Requirements:</strong> Fertile alluvial soil with good drainage</p>
+                        <p><strong>Common Pests/Diseases:</strong> Stem Borer, Red Rot</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Crop Recommendation System. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

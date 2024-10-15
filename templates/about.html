@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Crop Recommendation System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .about-banner {
+            position: relative;
+            background-image: url('../static/images/about-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+            z-index: 1;
+        }
+
+
+        .about-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #085a16;
+            z-index: -1;
+        }
+
+        .about-banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .about-banner p {
+            font-size: 1.2rem;
+        }
+
+        .about-content {
+            padding: 2rem 0;
+        }
+
+        .about-content .left-content {
+            padding-right: 2rem;
+        }
+
+        .about-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #085a16;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('static', filename='index.html') }}">Crop Recommendation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('crop_information') }}">Crop Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- About Us Section -->
+    <section class="about-banner">
+        <div class="container">
+            <h1>The Crop Recommendation Story🌱</h1>
+            <p>We help farmers choose the best crops for optimal yield using data-driven insights.</p>
+        </div>
+    </section>
+
+    <!-- first section -->
+    <section class="about-content">
+        <div class="container">
+            <div class="row">
+                <!-- Left Content -->
+                <div class="col-lg-6 left-content">
+                    <h3>About Our System</h3>
+                    <p>Our Crop Recommendation System is designed to assist farmers in making informed decisions about
+                        which crops to cultivate. By analyzing critical factors such as soil composition, temperature,
+                        rainfall, humidity, and more, the system suggests the most suitable crops for any given
+                        conditions.
+
+
+
+
+
+                    </p>
+                    <p>We believe in using technology to empower agriculture, and our mission is to provide accurate and
+                        easy-to-use tools for farmers. By leveraging the power of machine learning, we aim to enhance
+                        crop yield and sustainability. Our platform integrates real-time data and predictive analytics
+                        to offer personalized recommendations that are region-specific and tailored to individual farm
+                        needs.</p>
+
+                    <p>With our Crop Recommendation System, we strive to make farming more efficient, resilient, and
+                        profitable for communities around the world.</p>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-lg-6">
+                    <img src="../static/images/about-1.jpg" alt="Image of crops">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Content Section: Image on Left, Text on Right -->
+    <section class="about-content">
+        <div class="container">
+            <div class="row reverse-layout">
+                <!-- Left Image -->
+                <div class="col-lg-6">
+                    <img src="../static/images/farmers.jpg" alt="Image of farmers working">
+                </div>
+
+                <!-- Right Content -->
+                <div class="col-lg-6 right-content">
+                    <h3>Empowering Farmers</h3>
+                    <p style="line-height: 1.6rem; margin-top: 10px;">Our system is tailored to help farmers maximize
+                        their agricultural
+                        potential. By integrating
+                        real-time data, we ensure that farmers get the most reliable recommendations for their crops.
+                        From small-scale farms to large agricultural enterprises, our solution adapts to the needs of
+                        different users.</p>
+                    <p style="line-height: 1.6rem;">Through partnerships and collaborations with agricultural experts,
+                        we are continuously improving
+                        our system to offer even better, more accurate recommendations that contribute to sustainable
+                        farming practices.</p>
+                    <p style="line-height: 1.6rem;">By fostering innovation in the agricultural sector, we aim to
+                        revolutionize farming practices and
+                        help
+                        farmers boost productivity while ensuring environmental sustainability. Our vision is to create
+                        a world
+                        where every farmer has access to the best tools for success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Crop Recommendation System. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
